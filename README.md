@@ -191,7 +191,7 @@ int main() {
 ```
 o/p:
 
-![image](https://github.com/user-attachments/assets/3f9dcc84-72ce-4c55-9dbf-8bd64c8a1996)
+![Screenshot 2024-08-23 110300](https://github.com/user-attachments/assets/0f03d27a-0c58-40a1-9aef-f05ef1abc093)
 
 5. Diagonal Addition of Matrix:
 ```
