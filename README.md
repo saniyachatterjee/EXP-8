@@ -97,7 +97,9 @@ o/p: https://github.com/saniyachatterjee/saniyachatterjee-EXP-8/issues/1#issue-2
 
 o/p:
 
-![image](https://github.com/user-attachments/assets/e6c3aac1-ad57-43ce-8cd4-679443bc890c) 
+![Screenshot 2024-08-23 105656](https://github.com/user-attachments/assets/d4f53787-9419-4725-9cc8-54cba30410f3)
+![Screenshot 2024-08-23 105727](https://github.com/user-attachments/assets/475ab9f5-f497-40a4-b17c-4d343d8e1ae5)
+
 
 3.Multiplication of Matrix:
 
