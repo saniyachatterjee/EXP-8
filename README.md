@@ -220,9 +220,23 @@ int main() {
         sum += matrix[i][i];
     }
 
+
     // Display the sum of diagonal elements
     cout << "Sum of diagonal elements: " << sum << endl;
 
     return 0;
 }
 ```
+o/p
+![Screenshot 2024-08-23 110830](https://github.com/user-attachments/assets/8a931ec4-bdcd-476d-b003-353e906de82d)
+
+# Conclusion: 
+This experiment teaches fundamental programming concepts, particularly how to handle data structures that require multidimensional organization.
+
+Efficiently Store and Manipulate Data: By using 2D arrays, we can store data in a tabular format, making it easier to perform operations such as matrix addition, subtraction, and multiplication.
+
+Develop Problem-Solving Skills: Implementing matrix operations improves logical thinking and problem-solving skills by requiring careful consideration of indices, loops, and data handling.
+Understand Memory Management: Working with 2D arrays in C++ helps you understand how memory is allocated and accessed in programming, particularly when managing rows and columns of data.
+
+Apply concepts to real-world scenarios: Matrix operations are fundamental in many fields, including engineering, computer graphics, machine learning, and scientific computing. Understanding how to implement these in C++ enables us to tackle more complex problems in these areas.
+
