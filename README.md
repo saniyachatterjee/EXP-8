@@ -1,8 +1,6 @@
 # EXPERIMENT 8
 # Aim:
-To study and implement C++ 2D array matrices.
-# Software Used
-Visual Studio Code 
+To study and implement C++ 2D array matrices. 
 # Theory:
 The theory behind 2D array matrices in C++ focuses around organizing data into a grid structure with rows and columns to allow for efficient access and manipulation. A 2D array can be thought of as an array of arrays, with each element accessed using a pair of indices (i, j), which represent its row and column positions. In memory, these arrays are stored in adjacent blocks in row-major order, which means that elements are stored row by row. This layout determines how quickly and efficiently data can be accessed and modified.
 
@@ -157,8 +155,7 @@ int main() {
 
 o/p:
 
-![image](https://github.com/user-attachments/assets/4f787923-91b6-4fcd-bf89-630a615d57d1)
-
+![Screenshot 2024-08-23 110041](https://github.com/user-attachments/assets/9d1c0097-f828-4b58-9dca-d6fa33f64d3d)
 4. Transpose of Matrix:
 
 ```
