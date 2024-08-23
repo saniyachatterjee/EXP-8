@@ -1,35 +1,229 @@
-# saniyachatterjee-EXP-8
-## AIM
-To study and implement C++ 2D array matrices
-## THEORY
-The theory behind 2D array matrices in C++ centers on organizing data into a grid structure with rows and columns, which allows for efficient access and manipulation. A 2D array can be thought of as an array of arrays, where each element is accessed using a pair of indices, (i, j), representing its row and column positions. In memory, these arrays are stored in contiguous blocks, following a row-major order, meaning that elements are stored row by row. This layout affects how quickly and efficiently data can be accessed and modified.
+# EXPERIMENT 8
+# Aim:
+To study and implement C++ 2D array matrices.
+# Software Used
+Visual Studio Code 
+# Theory:
+The theory behind 2D array matrices in C++ focuses around organizing data into a grid structure with rows and columns to allow for efficient access and manipulation. A 2D array can be thought of as an array of arrays, with each element accessed using a pair of indices (i, j), which represent its row and column positions. In memory, these arrays are stored in adjacent blocks in row-major order, which means that elements are stored row by row. This layout determines how quickly and efficiently data can be accessed and modified.
 
-Operations on 2D arrays include traversal (iterating through elements), addition or subtraction of matrices by combining corresponding elements, and multiplication which involves summing products of rows and columns from two matrices. <br>Transposing a matrix involves flipping it over its diagonal, effectively swapping rows and columns.
+2D array operations include traversal (iterating through elements), matrix addition or subtraction through the combination of corresponding elements, and multiplication, which involves summing the products of rows and columns from two matrices. To transpose a matrix, flip it over its diagonal, effectively swapping rows and columns.
 
-Dynamic allocation allows for flexible handling of matrices when their size is not known at compile time. By using pointers and memory management techniques, C++ enables the creation and manipulation of 2D arrays whose dimensions can be determined during runtime.
+While 2D arrays provide simplicity and direct indexing, they have drawbacks such as fixed size constraints and the possibility of manual memory management errors. To overcome these limitations and improve functionality, standard libraries like std::vector or specialized libraries like Eigen can be used. These theoretical foundations are required for using 2D arrays in practical applications such as mathematical computations, computer graphics, and data analysis.
 
-While 2D arrays offer simplicity and direct indexing, they have limitations such as fixed size constraints and the potential for manual memory management errors. To overcome these limitations and enhance functionality, standard libraries like std::vector or specialized libraries like Eigen can be employed. These theoretical foundations are essential for applying 2D arrays in practical contexts such as mathematical computations, computer graphics, and data analysis.
+CODES:
+
+1. Entering Elements of a Matrix:
+   ```
+   #include <iostream>
+   using namespace std;
+
+   int main() {
+    int temp[3][3], i, j, k, l;
+
+    
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            cout << "Enter element (" << i << "," << j << "): ";
+            cin >> temp[i][j];
+        }
+    }
+    cout << "Matrix is:" << endl;
+    for (k = 0; k < 3; k++) {
+        for (l = 0; l < 3; l++) {
+            cout << temp[k][l] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+   }
+
+o/p:
+
+
+
+2. Addition and Subtraction of Matrix:
+   ```
+   #include <iostream>
+   using namespace std;
+
+   int main() {
+   
+    int r1 = 3, c1 = 3;
+    int r2 = 3, c2 = 3;
+    int m1[r1][c1], m2[r2][c2], sum[r1][c1],difference[r1][c1];
+    cout << "Enter elements of the first matrix:" << endl;
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c1; ++j) {
+            cout << "Enter element at position (" << i << ", " << j << "): ";
+            cin >> m1[i][j];
+        }
+    }
+    cout << "Enter elements of the second matrix:" << endl;
+    for (int i = 0; i < r2; ++i) {
+        for (int j = 0; j < c2; ++j) {
+            cout << "Enter element at position (" << i << ", " << j << "): ";
+            cin >> m2[i][j];
+        }
+    }
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c1; ++j) {
+            sum[i][j] = m1[i][j] + m2[i][j];
+        }
+    }
+    cout << endl << "Sum of matrices:" << endl;
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c1; ++j) {
+            cout << sum[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+      for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c1; ++j) {
+            difference[i][j] = m1[i][j] - m2[i][j];
+        }
+    }
+    cout << "Difference of matrices:" << endl;
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c1; ++j) {
+            cout << difference[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+    }
+
+o/p:
+
+![image](https://github.com/user-attachments/assets/e6c3aac1-ad57-43ce-8cd4-679443bc890c) 
+
+3.Multiplication of Matrix:
+
 ```
-//Name: Saniya Chatterjee
-//Prn: 23070123113
-//Class: EnTC B-2
 #include <iostream>
 using namespace std;
 
 int main() {
-    int temp[3][3], i, j,k,l;
-    for (i=0 ; i<3 ; i++){
-        for (j=0;j<3;j++){
-            cout<<" Enter element-("<<i<<j<<"):";
-            cin>>temp[i][j];
+    int r1, c1, r2, c2;
+    cout << "Enter rows and columns for the first matrix: ";
+    cin >> r1 >> c1;
+    cout << "Enter rows and columns for the second matrix: ";
+    cin >> r2 >> c2;
+    if (c1!= r2) {
+        cout<<"Matrix multiplication is not possible"<< endl;
+        return 0;
+    }
+    int m1[r1][c1], m2[r2][c2], product[r1][c2];
+    cout << "Enter elements of the first matrix:" << endl;
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c1; ++j) {
+            cout << "Enter element at  (" << i << ", " << j << "): ";
+            cin >> m1[i][j];
         }
     }
-    for(k-0; k<3; k++){
-        for (l=0;l<3;l++){
-            cout<<temp[k][l];
-            cout<<" ";
+    cout << "Enter elements of the second matrix:" << endl;
+    for (int i = 0; i < r2; ++i) {
+        for (int j = 0; j < c2; ++j) {
+            cout << "Enter element at (" << i << ", " << j << "): ";
+            cin >> m2[i][j];
+        }
+    } 
+    for (int i = 0; i < r1; i++) {
+        for (int j = 0; j < c2; j++) {
+            product[i][j] = 0;
+        }
     }
-    cout <<endl;
+    for (int i = 0; i < r1; i++) {
+        for (int j = 0; j < c2; j++) {
+            for (int k = 0; k < c1; k++) {
+                product[i][j] += m1[i][k] * m2[k][j];
+            }
+        }
     }
+    cout << "Resultant matrix:"<<endl;
+    for (int i = 0; i < r1; i++) {
+        for (int j = 0; j < c2; j++) {
+            cout << product[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+```
+
+o/p:
+
+![image](https://github.com/user-attachments/assets/4f787923-91b6-4fcd-bf89-630a615d57d1)
+
+4. Transpose of Matrix:
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+    int r,c;
+    cout<<"Enter the number of rows and columns of the matrix:";
+    cin>>r >>c;
+    int m[r][c],transpose[c][r];
+    cout<<"Enter elements of the matrix:"<<endl;
+    for(int i=0;i<r;i++) {
+        for (int j=0;j<c;j++) {
+            cout<<"Enter element at position(" << i << ", " << j << "):";
+            cin>>m[i][j];
+        }
+    }
+    for(int i=0;i<r;i++) {
+        for(int j=0;j<c;j++) {
+            transpose[j][i]=m[i][j];
+        }
+    }
+    cout<<"Transpose of the matrix is:"<< endl;
+    for(int i=0;i<c;i++) {
+        for(int j=0;j<r;j++) {
+            cout<<transpose[i][j]<<" ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+```
+o/p:
+
+![image](https://github.com/user-attachments/assets/3f9dcc84-72ce-4c55-9dbf-8bd64c8a1996)
+
+5. Diagonal Addition of Matrix:
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the size of the matrix (n x n): ";
+    cin >> n;
+
+    int matrix[n][n];
+
+    cout << "Enter the elements of the matrix:" << endl;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            cout << "Enter element at position (" << i << ", " << j << "): ";
+            cin >> matrix[i][j];
+        }
+    }
+
+    int sum = 0;
+
+    // Sum the primary diagonal elements
+    for (int i = 0; i < n; i++) {
+        sum += matrix[i][i];
+    }
+
+    // Display the sum of diagonal elements
+    cout << "Sum of diagonal elements: " << sum << endl;
+
+    return 0;
 }
 ```
